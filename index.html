@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Plan de Formación IGNAZ SERVICES</title>
+<style>
+  body {
+    background: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 1rem 2rem 3rem;
+  }
+  h1, h2, h3 {
+    color: #facc15; /* amarillo */
+  }
+  .curso-item {
+    background: #fff;
+    color: #000;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+  }
+  .curso-titulo {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+    color: #b45309; /* naranja oscuro */
+  }
+  .curso-categoria {
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+    color: #92400e;
+  }
+  .curso-fundamento {
+    font-size: 0.85rem;
+    color: #555;
+  }
+  #cursosList {
+    max-height: 400px;
+    overflow-y: auto;
+    margin-bottom: 2rem;
+  }
+  form {
+    background: #fff;
+    color: #000;
+    padding: 1rem 1.5rem 2rem;
+    border-radius: 8px;
+    max-width: 480px;
+    margin: auto;
+  }
+  label {
+    font-weight: bold;
+    display: block;
+    margin-top: 1rem;
+  }
+  input, select, textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.25rem;
+    border-radius: 5px;
+    border: 1px solid #999;
+    font-size: 1rem;
+    box-sizing: border-box;
+  }
+  textarea {
+    resize: vertical;
+  }
+  button, a.button {
+    margin-top: 1.5rem;
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    text-decoration: none;
+    text-align: center;
+  }
+  button:disabled, a.button[aria-disabled="true"] {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+  button#btnWhatsApp {
+    background-color: #25d366; /* verde WhatsApp */
+    color: white;
+    border: none;
+  }
+  a.button#btnCorreo {
+    background-color: #007bff; /* azul */
+    color: white;
+  }
+  .whatsapp-section {
+    text-align: center;
+    margin: 2rem 0;
+  }
+  .whatsapp-section img {
+    border-radius: 12px;
+    cursor: pointer;
+  }
+  footer {
+    color: #aaa;
+    text-align: center;
+    margin-top: 3rem;
+    font-size: 0.85rem;
+    font-style: italic;
+  }
+  .leyenda-legal {
+    margin-top: 2rem;
+    color: #f87171; /* rojo suave */
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-align: center;
+  }
+  .info-dc3 {
+    max-width: 480px;
+    margin: 2rem auto 0;
+    background: #111;
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: #eee;
+  }
+  .info-dc3 h3 {
+    color: #facc15;
+    margin-bottom: 0.5rem;
+  }
+  .info-dc3 h3.advertencia {
+    color: #f87171;
+    margin-top: 1rem;
+  }
+</style>
+</head>
+<body>
+
+  <header style="text-align:center; margin-bottom:2rem;">
+    <h1>Plan de Formación Profesional</h1>
+    <h2>IGNAZ SERVICES S.A. DE C.V.</h2>
+    <p style="max-width: 600px; margin: auto;">
+      Cursos con validez oficial STPS (formato DC-3), impartidos por instructores registrados. Dirigidos a personal de los sectores salud, industrial y administrativo.
+    </p>
+  </header>
+
+  <section>
+    <h2>Listado de Cursos</h2>
+    <div id="cursosList" aria-label="Lista de cursos disponibles"></div>
+  </section>
+
+  <section>
+    <h2>Solicita más información</h2>
+    <form id="formSolicitud" novalidate>
+      <label for="nombre">Nombre completo *</label>
+      <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre completo" />
+
+      <label for="telefono">Número telefónico *</label>
+      <input type="tel" id="telefono" name="telefono" pattern="\\d{7,}" required placeholder="Ej. 3332238972" />
+
+      <label for="email">Correo electrónico *</label>
+      <input type="email" id="email" name="email" required placeholder="correo@ejemplo.com" />
+
+      <label for="curso">Curso de interés *</label>
+      <select id="curso" name="curso" required>
+        <option value="">-- Selecciona un curso --</option>
+      </select>
+
+      <label for="pago">Preferencia de pago *</label>
+      <select id="pago" name="pago" required>
+        <option value="">-- Selecciona una opción --</option>
+        <option value="Pago completo">Pago completo</option>
+        <option value="Apartado">Apartado</option>
+        <option value="Otro">Otro</option>
+      </select>
+
+      <button type="button" id="btnWhatsApp" aria-label="Enviar formulario por WhatsApp">Enviar por WhatsApp</button>
+      <a href="#" id="btnCorreo" class="button" aria-disabled="true" aria-label="Enviar formulario por correo electrónico">Enviar por correo</a>
+    </form>
+  </section>
+
+  <section class="whatsapp-section" aria-label="Grupo de WhatsApp de IGNAZ">
+    <h3>Únete a nuestro grupo de WhatsApp</h3>
+    <a href="https://chat.whatsapp.com/EnanRagUASqASLnbBlf8oU" target="_blank" rel="noopener noreferrer" aria-label="Enlace al grupo de WhatsApp de IGNAZ">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://chat.whatsapp.com/EnanRagUASqASLnbBlf8oU" alt="Código QR para unirse al grupo de WhatsApp" width="200" height="200" />
+    </a>
+  </section>
+
+  <footer>
+    <p>Email: ignazservicedecv@gmail.com</p>
+    <p>WhatsApp: +52 333 223 8972</p>
+  </footer>
+
+  <section class="info-dc3" aria-label="Información sobre constancia DC-3 y advertencia legal">
+    <h3>Información sobre la constancia oficial DC-3</h3>
+    <p>
+      La constancia DC-3 es un documento oficial emitido por la Secretaría del Trabajo y Previsión Social (STPS) que certifica la capacitación laboral. 
+      <strong>Solo puede obtenerla el trabajador activo que participa en un curso contratado directamente por su empresa para capacitar a sus empleados.</strong>
+    </p>
+    <p>
+      Esta constancia no puede ser adquirida, vendida ni gestionada de forma individual o particular, ya que la STPS exige que la capacitación sea contratada formalmente por el empleador.
+    </p>
+    <h3 class="advertencia">Advertencia legal</h3>
+    <p>
+      La reproducción, copia o distribución parcial o total de este plan de formación sin autorización expresa de IGNAZ SERVICES S.A. DE C.V. es ilegal y puede derivar en sanciones conforme a la legislación vigente en materia de propiedad intelectual y derechos laborales.
+    </p>
+  </section>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const cursos = [
+    { titulo: "Técnicas de canalización básica en enfermería", categoria: "Enfermería", fundamento: "NOM-005-SSA3-2010, NOM-006-SSA2-2013" },
+    { titulo: "Técnicas avanzadas de canalización y manejo venoso", categoria: "Enfermería", fundamento: "NOM-220-SSA1-2016, protocolos de urgencias clínicas" },
+    { titulo: "Programación y corrección de errores en bomba de infusión", categoria: "Dispositivos Médicos", fundamento: "NOM-025-SSA3-2013 y especificaciones del fabricante" },
+    { titulo: "Capacitación integral en farmacovigilancia clínica", categoria: "Farmacología Clínica", fundamento: "NOM-220-SSA1-2016 y guías de farmacovigilancia de la OMS." },
+    { titulo: "Ergonomía y prevención de riesgos laborales", categoria: "Salud Ocupacional", fundamento: "NOM-030-SSA3-2013" },
+    { titulo: "Evaluación y control de riesgos por agentes físicos", categoria: "Salud Ocupacional", fundamento: "NOM-030-SSA3-2013" },
+    { titulo: "Gestión de residuos peligrosos biológico-infecciosos (RPBI)", categoria: "Medio Ambiente", fundamento: "NOM-087-ECOL-SSA1-2002" },
+    { titulo: "Evaluación de riesgos por agentes biológicos en ambientes laborales", categoria: "Salud Ocupacional", fundamento: "NOM-017-STPS-2008 y NOM-036-1-STPS-2018" },
+    { titulo: "Capacitación en uso correcto de equipo de protección personal (EPP)", categoria: "Salud Ocupacional", fundamento: "NOM-017-STPS-2008" },
+    { titulo: "Procedimientos de primeros auxilios y soporte vital básico", categoria: "Enfermería", fundamento: "NOM-003-SSA2-1993" },
+    { titulo: "Manejo y prevención de enfermedades laborales", categoria: "Salud Ocupacional", fundamento: "NOM-015-STPS-2001" },
+    { titulo: "Control de infecciones hospitalarias", categoria: "Enfermería", fundamento: "NOM-087-ECOL-SSA1-2002" },
+    { titulo: "Protocolos para atención a emergencias médicas", categoria: "Enfermería", fundamento: "NOM-009-SSA2-2010" },
+    { titulo: "Capacitación en administración segura de medicamentos", categoria: "Farmacología Clínica", fundamento: "NOM-220-SSA1-2016" },
+    { titulo: "Supervisión y auditoría en salud y seguridad laboral", categoria: "Salud Ocupacional", fundamento: "NOM-030-SSA3-2013" },
+    { titulo: "Capacitación en seguridad química y manejo de sustancias peligrosas", categoria: "Salud Ocupacional", fundamento: "NOM-018-STPS-2015" },
+    { titulo: "Manejo integral de residuos sólidos urbanos y hospitalarios", categoria: "Medio Ambiente", fundamento: "NOM-161-SEMARNAT-2011" },
+    { titulo: "Capacitación en prevención y control de riesgos psicosociales", categoria: "Salud Ocupacional", fundamento: "NOM-035-STPS-2018" },
+    { titulo: "Manejo de equipos médicos y dispositivos electrónicos", categoria: "Dispositivos Médicos", fundamento: "NOM-025-SSA3-2013" },
+    { titulo: "Capacitación en atención al paciente crónico y terminal", categoria: "Enfermería", fundamento: "Protocolos institucionales" },
+    { titulo: "Capacitación en nutrición clínica y apoyo alimentario", categoria: "Salud", fundamento: "NOM-015-SSA2-2010" },
+    { titulo: "Formación en control de calidad para laboratorios clínicos", categoria: "Salud", fundamento: "NOM-087-ECOL-SSA1-2002" },
+    { titulo: "Capacitación en soporte vital avanzado", categoria: "Enfermería", fundamento: "NOM-009-SSA2-2010" },
+    { titulo: "Entrenamiento en manejo de emergencias químicas", categoria: "Salud Ocupacional", fundamento: "NOM-018-STPS-2015" },
+    { titulo: "Capacitación en ergonomía para trabajos administrativos", categoria: "Salud Ocupacional", fundamento: "NOM-030-SSA3-2013" },
+    { titulo: "Manejo de tecnología para telemedicina y monitoreo remoto", categoria: "Salud", fundamento: "Protocolos institucionales" },
+    { titulo: "Capacitación en técnicas de rehabilitación física básica", categoria: "Salud", fundamento: "Protocolos institucionales" },
+    { titulo: "Formación en prevención de adicciones y salud mental", categoria: "Salud Ocupacional", fundamento: "NOM-035-STPS-2018" },
+    { titulo: "Capacitación en procedimientos quirúrgicos básicos", categoria: "Enfermería", fundamento: "Protocolos institucionales" },
+    { titulo: "Capacitación en administración hospitalaria", categoria: "Administrativo", fundamento: "NOM-035-STPS-2018" },
+    { titulo: "Capacitación en ética y legislación en salud", categoria: "Administrativo", fundamento: "Ley General de Salud" },
+    { titulo: "Técnicas de limpieza y desinfección hospitalaria", categoria: "Salud Ocupacional", fundamento: "NOM-087-ECOL-SSA1-2002" },
+    { titulo: "Formación en uso de sistemas informáticos para salud", categoria: "Administrativo", fundamento: "Normas internas" },
+    { titulo: "Capacitación en manejo de crisis y comunicación efectiva", categoria: "Administrativo", fundamento: "NOM-035-STPS-2018" },
+    { titulo: "Formación en bioseguridad para personal de laboratorio", categoria: "Salud", fundamento: "NOM-087-ECOL-SSA1-2002" },
+    { titulo: "Capacitación en control de calidad y seguridad del paciente", categoria: "Salud", fundamento: "NOM-030-SSA3-2013" },
+    { titulo: "Capacitación en prevención de accidentes laborales", categoria: "Salud Ocupacional", fundamento: "NOM-017-STPS-2008" },
+    { titulo: "Formación en técnicas de higiene industrial", categoria: "Salud Ocupacional", fundamento: "NOM-030-SSA3-2013" },
+    { titulo: "Capacitación en manejo de crisis sanitaria", categoria: "Salud", fundamento: "Protocolos institucionales" },
+    { titulo: "Capacitación en evaluación médica laboral", categoria: "Salud Ocupacional", fundamento: "NOM-036-1-STPS-2018" }
+  ];
+
+  const cursosListDiv = document.getElementById('cursosList');
+  const cursoSelect = document.getElementById('curso');
+
+  cursos.forEach(curso => {
+    // Crear div para listado
+    const cursoDiv = document.createElement('div');
+    cursoDiv.classList.add('curso-item');
+    cursoDiv.innerHTML = `
+      <div class="curso-titulo">${curso.titulo}</div>
+      <div class="curso-categoria">${curso.categoria}</div>
+      <div class="curso-fundamento">${curso.fundamento}</div>
+    `;
+    cursosListDiv.appendChild(cursoDiv);
+
+    // Añadir opción al select con nombre claro
+    const option = document.createElement('option');
+    option.value = curso.titulo;
+    option.textContent = curso.titulo;
+    cursoSelect.appendChild(option);
+  });
+
+  const form = document.getElementById('formSolicitud');
+  const btnWhatsApp = document.getElementById('btnWhatsApp');
+  const btnCorreo = document.getElementById('btnCorreo');
+
+  function validarFormulario() {
+    return form.checkValidity();
+  }
+
+  function actualizarCorreo() {
+    if (validarFormulario()) {
+      btnCorreo.setAttribute('aria-disabled', 'false');
+      btnCorreo.style.pointerEvents = 'auto';
+      btnCorreo.style.opacity = '1';
+
+      const nombre = form.nombre.value.trim();
+      const telefono = form.telefono.value.trim();
+      const email = form.email.value.trim();
+      const curso = form.curso.value;
+      const pago = form.pago.value;
+
+      const subject = 'Solicitud de Información - Formación IGNAZ';
+      const body = `Nombre completo: ${nombre}%0ANúmero telefónico: ${telefono}%0ACorreo electrónico: ${email}%0ACurso de interés: ${curso}%0APreferencia de pago: ${pago}`;
+
+      btnCorreo.href = `mailto:ignazservicedecv@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+    } else {
+      btnCorreo.setAttribute('aria-disabled', 'true');
+      btnCorreo.style.pointerEvents = 'none';
+      btnCorreo.style.opacity = '0.5';
+      btnCorreo.href = '#';
+    }
+  }
+
+  form.addEventListener('input', actualizarCorreo);
+
+  btnWhatsApp.addEventListener('click', () => {
+    if (!validarFormulario()) {
+      alert('Por favor completa todos los campos obligatorios correctamente.');
+      return;
+    }
+    const nombre = form.nombre.value.trim();
+    const telefono = form.telefono.value.trim();
+    const email = form.email.value.trim();
+    const curso = form.curso.value;
+    const pago = form.pago.value;
+
+    const mensaje = 
+      `Solicitud de información:%0A` +
+      `Nombre completo: ${nombre}%0A` +
+      `Número telefónico: ${telefono}%0A` +
+      `Correo electrónico: ${email}%0A` +
+      `Curso de interés: ${curso}%0A` +
+      `Preferencia de pago: ${pago}`;
+
+    // Usar whatsapp:// para móvil, https:// para desktop, y asegurar compatibilidad con whatsapp business
+    const urlWhatsapp = `https://wa.me/523332238972?text=${mensaje}`;
+
+    window.open(urlWhatsapp, '_blank');
+  });
+
+  // Inicializa el estado del botón correo
+  actualizarCorreo();
+});
+</script>
+
+</body>
+</html>
